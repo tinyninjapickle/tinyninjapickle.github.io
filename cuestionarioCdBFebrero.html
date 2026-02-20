@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Test Místico</title>
+
+<!-- Fuente manuscrita -->
+<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+<style>
+body {
+    background: transparent;
+    font-family: "Georgia", serif;
+}
+
+.formatoTarjeta {
+    width: 380px;
+    background: radial-gradient(circle at top, #bd10b4, #440241);
+    background-image: url("https://i2.wp.com/wallpapercave.com/wp/wp2730382.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid #b57a93;
+    padding: 22px;
+    margin: auto;
+    border-radius: 16px;
+    box-shadow:
+        inset 0 0 35px rgba(255,255,255,0.6),
+        0 0 25px rgba(180,120,150,0.6);
+}
+
+.preguntaTestCdB {
+    margin-bottom: 22px;
+}
+
+.preguntaTestCdB p {
+    color: #aaa822;
+}
+
+.opcionTestCdB {
+    margin: 6px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Mensajes manuscritos */
+.mensajeCdB {
+    display: inline-block;
+    margin-left: 8px;
+    font-family: 'Allura', cursive;
+    font-size: 1.3em;
+    color: #ce9d15;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    min-height: 1.1em;
+    line-height: 1.1em;
+}
+
+.mensajeCdB.visible {
+    opacity: 1;
+    transform: translateY(0);
+    min-height: 1.1em;
+    line-height: 1.1em;
+}
+
+button {
+    background: linear-gradient(#c48b9f, #a86b85);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 1em;
+    border-radius: 12px;
+    cursor: pointer;
+    display: block;
+    margin: 18px auto;
+    box-shadow: 0 0 10px rgba(160,90,120,0.6);
+}
+
+button:hover {
+    background: linear-gradient(#b97b93, #94506b);
+}
+
+#resultadoTestCdB {
+    min-height: 3em;
+    margin-top: 18px;
+    text-align: center;
+}
+
+/* Resultado místico */
+.resultadoTestCdB-mistico {
+    font-family: 'Allura', cursive;
+    font-size: 1.5em;
+    color: #aaa822;
+    text-shadow:
+        0 0 6px rgba(180,90,140,0.6),
+        0 0 12px rgba(255,200,220,0.6);
+    opacity: 0;
+    transform: translateY(12px);
+    animation: revelar 2.5s ease forwards;
+    white-space: pre-line;
+}
+
+@keyframes revelar {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.opcionTestCdB label {
+    color: #cccccc;
+}
+
+/* Ocultar radio original */
+.opcionTestCdB input[type=radio] {
+    display: none;
+}
+
+/* Luna */
+.radioLuna {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    border: 1.5px solid #222;
+    vertical-align: middle;
+    position: relative;
+    box-shadow: inset -2px 0 0 #111;
+    transform: rotate(-18deg);
+}
+
+/* Fase lunar al seleccionar */
+.opcionTestCdB input:checked + .radioLuna {
+    background: #111;
+    box-shadow: inset 6px 0 0 #f5f5f5;
+}
+
+/* Suavizar transición */
+.radioLuna,
+.opcionTestCdB input:checked + .radioLuna {
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="formatoTarjeta">
+<div style="text-align: center; color: #cf8dc7; letter-spacing: 1px; margin-bottom: 18px"><h2>Test del Amor</h2></div>
+
+<div class="preguntaTestCdB">
+<p>1. Tu cita ideal incluye…</p>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB1" value="1"><span class="radioLuna"></span> Velas y miradas</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB1" value="2"><span class="radioLuna"></span> Horas de charla</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB1" value="3"><span class="radioLuna"></span> Un plan improvisado</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB1" value="4"><span class="radioLuna"></span> Química explosiva</label>
+<span class="mensajeCdB"></span>
+</div>
+</div>
+
+<div class="preguntaTestCdB">
+<p>2. Lo más importante en pareja es...</p>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB2" value="1"><span class="radioLuna"></span> Gestos dulces</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB2" value="2"><span class="radioLuna"></span> Confianza total</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB2" value="3"><span class="radioLuna"></span> Risas constantes</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB2" value="4"><span class="radioLuna"></span> Pasión intensa</label>
+<span class="mensajeCdB"></span>
+</div>
+</div>
+
+<div class="preguntaTestCdB">
+<p>3. Recibes un avioncito de papel de tu pareja. El mensaje perfecto sería...</p>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB3" value="1"><span class="radioLuna"></span> Te echo de menos</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB3" value="2"><span class="radioLuna"></span> ¿Cómo estás?</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB3" value="3"><span class="radioLuna"></span> ¿Salimos ya?</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB3" value="4"><span class="radioLuna"></span> Prepárate que voy...</label>
+<span class="mensajeCdB"></span>
+</div>
+</div>
+
+<div class="preguntaTestCdB">
+<p>4. Tras una discusión sueles...</p>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB4" value="1"><span class="radioLuna"></span> Buscar un abrazo</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB4" value="2"><span class="radioLuna"></span> Hablarlo todo</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB4" value="3"><span class="radioLuna"></span> Hacer una broma</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB4" value="4"><span class="radioLuna"></span> Reconciliación ardiente</label>
+<span class="mensajeCdB"></span>
+</div>
+</div>
+
+<div class="preguntaTestCdB">
+<p>5. Tu plan ideal de domingo es...</p>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB5" value="1"><span class="radioLuna"></span> Mantita y peli</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB5" value="2"><span class="radioLuna"></span> Relax juntos</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB5" value="3"><span class="radioLuna"></span> Una aventura espontánea</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB5" value="4"><span class="radioLuna"></span> Desconexión total</label>
+<span class="mensajeCdB"></span>
+</div>
+</div>
+
+<div class="preguntaTestCdB">
+<p>6. Lo que más temes en pareja es...</p>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB6" value="1"><span class="radioLuna"></span> Distanciación emocional</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB6" value="2"><span class="radioLuna"></span> Falta de diálogo</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB6" value="3"><span class="radioLuna"></span> La rutina</label>
+<span class="mensajeCdB"></span>
+</div>
+<div class="opcionTestCdB">
+<label><input type="radio" name="pCdB6" value="4"><span class="radioLuna"></span> Que se apague la chispa</label>
+<span class="mensajeCdB"></span>
+</div>
+</div>
+
+<button onclick="calcularResultado()">Analiza mi corazón</button>
+
+<div id="resultadoTestCdB"></div>
+</div>
+
+<script>
+const mensajesRespuesta = [
+    "¡Lo sabía!",
+    "No me lo esperaba…",
+    "Lo tendré en cuenta",
+    "No diré nada",
+    "Entiendo…",
+    "Interesante…",
+    "Será nuestro secreto",
+    "¿Estás segura?",
+    "Como sospechaba",
+    "Vaya…"
+];
+
+let indiceMensaje = 0;
+
+document.querySelectorAll("input[type=radio]").forEach(radio => {
+    radio.addEventListener("change", e => {
+        const span = e.target
+            .closest(".opcionTestCdB")
+            .querySelector(".mensajeCdB");
+        let mensaje;
+        if (indiceMensaje < mensajesRespuesta.length) {
+            mensaje = mensajesRespuesta[indiceMensaje];
+            indiceMensaje++;
+        } else {
+            mensaje = mensajesRespuesta[
+                Math.floor(Math.random() * mensajesRespuesta.length)
+            ];
+        }
+        span.textContent = mensaje;
+        span.classList.add("visible");
+        setTimeout(() => {
+            span.classList.remove("visible");
+        }, 2500);
+    });
+});
+
+
+function calcularResultado() {
+    const preguntas = ["pCdB1", "pCdB2", "pCdB3", "pCdB4", "pCdB5", "pCdB6"];
+    let total = 0;
+
+    for (let p of preguntas) {
+        const sel = document.querySelector(`input[name="${p}"]:checked`);
+        if (!sel) {
+            document.getElementById("resultadoTestCdB").innerHTML =
+                "<div class='resultadoTestCdB-mistico'>Responde a todo. Tómate tu tiempo.</div>";
+            return;
+        }
+        total += parseInt(sel.value);
+    }
+
+    let texto;
+    if (total <= 9) {
+        texto = `Eres un romántico empedernido
+        Suspiras, idealizas y vives por los detalles. Tu historia perfecta incluye miradas largas y emociones suaves.`;
+    } else if (total <= 14) {
+        texto = `Amor estable y profundo
+        Buscas calma, seguridad emocional y conexión sincera. Prefieres relaciones sólidas antes que fuegos artificiales.`;
+    } else if (total <= 19) {
+        texto = `Amor divertido y chispeante
+        Necesitas alegría, ligereza y complicidad juguetona. El aburrimiento no entra en tu ecuación sentimental.`;    
+    } else {
+        texto = `Eres adicto a la pasión
+        Para ti el amor debe sentirse en la piel. Intensidad, deseo y emoción constante son tu combustible romántico.`;
+    }
+
+    document.getElementById("resultadoTestCdB").innerHTML =
+        `<div class="resultadoTestCdB-mistico">${texto}</div>`;
+}
+</script>
+
+</body>
+</html>
