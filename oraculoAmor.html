@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Oráculo del Amor ✨</title>
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+
+  <style>
+    .bodyOraculoCdB {
+      background: radial-gradient(circle, #1b1b2f, #0f0f1a);
+      font-family: 'Cinzel', serif;
+      color: #f5e6b8;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .oraculoDelAmor {
+      background: linear-gradient(145deg, #482b5f, #1a1a2e);
+      max-width: 420px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 16px;
+      border: 2px solid #c9a44c;
+      box-shadow: 0 0 25px rgba(201,164,76,0.4);
+    }
+
+    .tituloOraculo {
+      margin-bottom: 10px;
+      color: #e8c872;
+      text-shadow: 0 0 8px rgba(232,200,114,0.6);
+    }
+
+    .subtituloOraculo {
+      font-size: 0.95em;
+      opacity: 0.9;
+    }
+
+    .cuadroTextoCdB {
+      width: 85%;
+      padding: 8px;
+      margin: 6px 0;
+      background: #0f0f1a;
+      color: #f5e6b8;
+      border: 1px solid #c9a44c;
+      border-radius: 6px;
+      font-family: 'Cinzel', serif;
+      text-align: center;
+    }
+
+    .cuadroTextoCdB::placeholder {
+      color: #b8a56a;
+    }
+
+    .botonCalcular {
+      margin-top: 12px;
+      padding: 10px 24px;
+      background: linear-gradient(145deg, #c9a44c, #9f7c2f);
+      border: none;
+      border-radius: 20px;
+      color: #1a1a2e;
+      font-family: 'Cinzel', serif;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 0 12px rgba(201,164,76,0.6);
+    }
+
+    .botonCalcular:hover {
+      box-shadow: 0 0 18px rgba(201,164,76,0.9);
+    }
+
+    #resultOraculoCdB {
+      margin-top: 18px;
+      font-size: 1.2em;
+      text-shadow: 0 0 10px rgba(245,230,184,0.6);
+    }
+  </style>
+</head>
+<body class="bodyOraculoCdB">
+
+  <div class="oraculoDelAmor">
+    <h2 class="tituloOraculo">🔮 Oráculo del Amor 🔮</h2>
+    <p class="subtituloOraculo">Escribe los nombres y deja que la magia decida vuestro destino…</p>
+
+    <input class="cuadroTextoCdB" type="text" id="nombre1" placeholder="Primer nombre">
+    <input class="cuadroTextoCdB" type="text" id="nombre2" placeholder="Segundo nombre">
+
+    <button class="botonCalcular" onclick="calcular()">Revelar destino</button>
+
+    <div id="resultOraculoCdB"></div>
+  </div>
+
+  <script>
+    function sumaASCII(texto) {
+      let suma = 0;
+      for (let i = 0; i < texto.length; i++) {
+        suma += texto.charCodeAt(i);
+      }
+      return suma;
+    }
+
+    function mensajeMagico(p) {
+      if (p < 20) return `🌑 ${p}% — Los astros aún guardan silencio`;
+      if (p < 40) return `🌒 ${p}% — Una chispa dormida aguarda despertar`;
+      if (p < 60) return `🌓 ${p}% — El destino se inclina a vuestro favor`;
+      if (p < 80) return `🌕 ${p}% — Las energías del amor os rodean`;
+      return `✨ ${p}% — Vuestras almas están unidas por el destino`;
+    }
+
+    function calcular() {
+      const n1 = document.getElementById("nombre1").value.trim();
+      const n2 = document.getElementById("nombre2").value.trim();
+
+      if (!n1 || !n2) {
+        document.getElementById("resultOraculoCdB").innerHTML =
+          "⚠️ El oráculo necesita ambos nombres";
+        return;
+      }
+
+      const total = sumaASCII(n1.toLowerCase()) + sumaASCII(n2.toLowerCase());
+      const porcentaje = total % 100;
+
+      document.getElementById("resultOraculoCdB").innerHTML =
+        mensajeMagico(porcentaje);
+    }
+  </script>
+
+</body>
+</html>
